@@ -1,11 +1,13 @@
 import React from "react";
 
-export default function table(props) {
+export default function TableData(props) {
   return (
     <table>
       <thead>
         <tr>
-          <th>Username</th>
+          <th>
+            <button>onClick={() => props.sortBy("id")}> Username</button>
+          </th>
           <th>Mobile</th>
           <th>factor_status</th>
           <th>Maker</th>
@@ -22,16 +24,19 @@ export default function table(props) {
       <tbody>
         {props.data.map((row) => (
           <tr>
-            <td>{row.Username}</td>
-            <td>{row.Mobile}</td>
-            <td>{row.factor_status}</td>
-            <td>{row.Comments}</td>
-            <td>{row.User_Status}</td>
-            <td>{row.FullName}</td>
-            <td>{row.createdAt}</td>
-            <td>{row.modifiedAt}</td>
+            <td>{row.username}</td>
+            <td>{row.mobile}</td>
+            <td>{row.twoFactorStatus}</td>
+            <td>{row.userId}</td>
+            <td>{row.maker}</td>
+            <td>{row.approvalStatus}</td>
+            <td>{row.comments}</td>
+            <td>{row.userStatus}</td>
+            <td>{row.fullName}</td>
+            <td>{row.dateTimeCreated}</td>
+            <td>{row.dateTimeModified}</td>
             <td>{row.check_for_comments}</td>
-            <td>{row.ActionType}</td>
+            <td>{row.actionType}</td>
           </tr>
         ))}
       </tbody>
